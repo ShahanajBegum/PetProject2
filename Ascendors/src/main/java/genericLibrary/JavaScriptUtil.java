@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class JavaScriptUtil extends BaseClass {
 
-		//public WebDriver driver;
+//		public WebDriver driver;
 		public JavascriptExecutor javaScript = (JavascriptExecutor) driver;
 		
 		public JavaScriptUtil(WebDriver driver) {

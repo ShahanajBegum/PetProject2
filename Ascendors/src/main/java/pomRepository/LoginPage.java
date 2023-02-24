@@ -9,22 +9,22 @@ public class LoginPage {
 	
 	public WebDriver driver;
 
-	 public LoginPage(WebDriver driver2) {
-		// TODO Auto-generated constructor stub
+	 public LoginPage(WebDriver driver) {
+		
 		PageFactory.initElements(driver,this);
 	}
 
-	@FindBy(id="user-name")    			               			private  WebElement usernameTestField;
-	@FindBy(id="password")    						             private WebElement passwordTestField;
-	@FindBy(xpath="//input[@class='submit-button btn_action']")     private WebElement loginButton;
+	@FindBy(xpath="//input[@name='adminEmail']")    				private  WebElement emailTestField;
+	@FindBy(xpath="//input[@name='adminPassword']")    			    private WebElement passwordTestField;
+	@FindBy(xpath="//button[.='Login']")                            private WebElement loginButton;
 	
     public WebDriver getDriver() {
 		return driver;
 	}
 
-    public WebElement getUsernameTestField() {
-		return usernameTestField;
-	}
+//    public WebElement getemailTestField() {
+//		return emailTestField;
+//	}
 
     public WebElement getPasswordTestField() {
 		return passwordTestField;
@@ -33,17 +33,23 @@ public class LoginPage {
     public WebElement getLoginButton() {
 		return loginButton;
 	}
+
+	public WebElement getemailTestField() {
+		// TODO Auto-generated method stub
+		return emailTestField;
+	}
 	
-    public HomePage login(String username,String password){
+//    public HomePage login(String username,String password){
+    
+//	public void loginpage(String username,String password) {	
+//		emailTestField.sendKeys(username);
+//		passwordTestField.sendKeys(password);
+//		loginButton.click();
 		
-		usernameTestField.sendKeys(username);
-		passwordTestField.sendKeys(password);
-		loginButton.click();
-		
-		return new HomePage(driver);
+//		return new HomePage(driver);
 		
 		
      
 		
 	}
-}
+

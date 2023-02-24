@@ -22,7 +22,7 @@ import pomRepository.LoginPage;
 public class BaseClass implements FrameWorkConstants {
 	
 	public static WebDriver driver;
-	public   PropertyFileReader readDataFromProperty;
+	public  static PropertyFileReader readDataFromProperty;
 	public ExcelUtil readDataFromExcel;
 	 public  LoginPage login;
 	 public  HomePage homepage;
@@ -36,7 +36,7 @@ public class BaseClass implements FrameWorkConstants {
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		Reporter.log("Firefox Successfully launched",true);
+		Reporter.log("Chrome Successfully launched",true);
 		}
 		
 		else if(browserName.equalsIgnoreCase("FireFox")) {
@@ -57,21 +57,21 @@ public class BaseClass implements FrameWorkConstants {
 		@BeforeMethod(alwaysRun=true)
 		public  void openApplication() throws IOException{
 			String url=PropertyFileReader.readDataFromProperty("Url");
-			String username=PropertyFileReader.readDataFromProperty("UserName");
-			String password=PropertyFileReader.readDataFromProperty("PassWord");
-			
+//			String username=PropertyFileReader.readDataFromProperty("UserName");
+//			String password=PropertyFileReader.readDataFromProperty("PassWord");
+//			
 			driver.get(url);
 		
-			login=new LoginPage(driver);
-			homepage=login.login(username,password);
+//			login=new LoginPage(driver);
+//			homepage=login.login(username,password);
 			}
 		
-		@AfterMethod(alwaysRun=true)
-		public void closeApplication() {
-			homepage=new HomePage(driver);
-			homepage.logout();
-			
-		}
+//		@AfterMethod(alwaysRun=true)
+//		public void closeApplication() {
+//			homepage=new HomePage(driver);
+//			homepage.logout();
+//			
+//		}
 		
 		@AfterClass(alwaysRun=true)
 		public void closeBrowser() {

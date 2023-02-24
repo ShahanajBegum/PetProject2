@@ -15,31 +15,19 @@ public WebDriver driver;
 	}
 
 
-	@FindBy(xpath="//button[.='Open Menu']") 
-	 private static  WebElement menu;
-	 
-	 @FindBy(xpath="//a[.='Logout']") 
-	 private   WebElement logout;
+	@FindBy(xpath="//a[.='Home']") 
+	 private static  WebElement HomePage;
 
-	 public  WebElement getMenu() {
-			return menu;
-		}
-
-     public  WebElement getLogout() {
-			return logout;
-		}
-	 
-	 
-	public void logout() {
-		menu.click();
-		logout.click();
-		
-		
+	public  WebElement getHomePage() {
+		return HomePage;
 	}
 
+
+	
+}
 
 
 
 	
 
-}
+
